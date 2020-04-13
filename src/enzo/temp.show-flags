@@ -1,0 +1,21 @@
+
+CPP = /usr/bin/cpp
+CC  = /home/kerex/private_packages/openmpi_ucx/bin/mpicc
+CXX = /home/kerex/private_packages/openmpi_ucx/bin/mpicxx
+FC  = /home/kerex/private_packages/openmpi_ucx/bin/mpifort
+F90 = /home/kerex/private_packages/openmpi_ucx/bin/mpifort
+LD  = /home/kerex/private_packages/openmpi_ucx/bin/mpicxx
+
+DEFINES = -DLINUX -DH5_USE_16_API   -D__max_subgrids=100000 -D__max_baryons=30 -D__max_cpu_per_node=8 -D__memory_pool_size=100000 -DINITS64 -DSMALL_INTS -DCONFIG_PINT_4 -DIO_32     -DUSE_MPI   -DCONFIG_PFLOAT_8 -DCONFIG_BFLOAT_8  -DUSE_HDF5_GROUPS    -DTRANSFER   -DNEW_GRID_IO -DFAST_SIB -DBITWISE_IDENTICALITY -DFLUX_FIX     -DSET_ACCELERATION_BOUNDARY
+
+INCLUDES = -I/home/kerex/private_packages/hdf5/include  -I/home/kerex/private_packages/openmpi_ucx/include           -I.
+
+CPPFLAGS = -P -traditional 
+CFLAGS   = -O2 -O2
+CXXFLAGS = -O2  -O2
+FFLAGS   = -O2 -r8 -i4    -O2
+F90FLAGS = -O2 -r8 -i4    -O2
+LDFLAGS  = -O2  -O2
+
+LIBS     = -L/home/kerex/private_packages/hdf5/lib -lhdf5 -lz  -lifcore -lifport -limf -lstdc++    -L/home/kerex/private_packages/openmpi_ucx/lib -lmpi        
+

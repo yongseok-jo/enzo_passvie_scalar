@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "enzo"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"Grid_AddFeedbackSphere.C": "cpp",
+			"StarParticleSubtractAccretedMass.C": "cpp",
+			"Grid_SubtractAccretedMassFromSphere.C": "cpp",
+			"Star_SubtractAccretedMassFromCell.C": "cpp",
+			"Grid_ComputeElementalDensity.C": "cpp",
+			"Grid_ComputeCoolingTime.C": "cpp",
+			"Grid_StarParticleHandler.C": "cpp",
+			"AnalysisBaseClass.C": "cpp",
+			"RecalibrateAccretingMass.C": "cpp",
+			"StarParticleAddFeedback.C": "cpp",
+			"Star_RemoveMassFromStarAfterFeedback.C": "cpp",
+			"Group_WriteDataHierarchy.C": "cpp",
+			"FluxFix_Grid_CorrectForRefinedFluxes.C": "cpp",
+			"Grid_CorrectForRefinedFluxes.C": "cpp",
+			"Grid_SolveOneZoneFreefall.C": "cpp",
+			"Grid_SolveHydroEquations.C": "cpp",
+			"Grid_InterpolateFieldValues.C": "cpp",
+			"Grid_ZeusSolver.C": "cpp",
+			"Zeus_xTransport.C": "cpp",
+			"Grid_IdentifyColourFields.C": "cpp",
+			"FindField.C": "cpp"
+		}
+	}
+}

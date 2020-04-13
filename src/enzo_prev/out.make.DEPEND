@@ -1,0 +1,218 @@
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading /usr/include/string.h, line 33): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading /usr/include/stdio.h, line 34): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading /usr/include/_G_config.h, line 15): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading /usr/include/wchar.h, line 52): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading /usr/include/libio.h, line 53): cannot find include file "stdarg.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stdarg.h
+	not in /nasa/sgi/mpt/1.25/include/stdarg.h
+	not in ./stdarg.h
+	not in /usr/include/stdarg.h
+makedepend: warning:  /usr/include/math.h includes /usr/include/bits/mathcalls.h more than once!
+Already have
+	/usr/include/features.h
+	/usr/include/bits/huge_val.h
+	/usr/include/bits/huge_valf.h
+	/usr/include/bits/huge_vall.h
+	/usr/include/bits/inf.h
+	/usr/include/bits/nan.h
+	/usr/include/bits/mathdef.h
+	/usr/include/bits/mathcalls.h
+makedepend: warning:  /usr/include/math.h includes /usr/include/bits/mathcalls.h more than once!
+Already have
+	/usr/include/features.h
+	/usr/include/bits/huge_val.h
+	/usr/include/bits/huge_valf.h
+	/usr/include/bits/huge_vall.h
+	/usr/include/bits/inf.h
+	/usr/include/bits/nan.h
+	/usr/include/bits/mathdef.h
+	/usr/include/bits/mathcalls.h
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading /usr/include/signal.h, line 349): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading ErrorExceptions.h, line 23): cannot find include file "exception"
+	not in /nasa/hdf5/1.6.5/serial/include/exception
+	not in /nasa/sgi/mpt/1.25/include/exception
+	not in ./exception
+	not in /usr/include/exception
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading /usr/include/sys/types.h, line 147): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading /usr/include/limits.h, line 125): cannot find include file "limits.h"
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading /usr/include/inttypes.h, line 38): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/AGNDiskInitialize.C (reading /nasa/hdf5/1.6.5/serial/include/H5public.h, line 50): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/CollapseMHD3DInitialize.C (reading /nasa/sgi/mpt/1.25/include/mpio.h, line 35): cannot find include file "sgidefs.h"
+	not in /nasa/hdf5/1.6.5/serial/include/sgidefs.h
+	not in /nasa/sgi/mpt/1.25/include/sgidefs.h
+	not in ./sgidefs.h
+	not in /usr/include/sgidefs.h
+makedepend: warning:  hydro_rk/EvolveLevel_RK2.C (reading /usr/include/stdlib.h, line 33): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/EvolveLevel_RK2.C (reading /usr/include/alloca.h, line 25): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/EvolveLevel_RK2.C (reading /usr/include/unistd.h, line 227): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  hydro_rk/TurbulenceInitialize.C, line 16: cannot find include file "map"
+	not in /nasa/hdf5/1.6.5/serial/include/map
+	not in /nasa/sgi/mpt/1.25/include/map
+	not in ./map
+	not in /usr/include/map
+makedepend: warning:  hydro_rk/TurbulenceInitialize.C, line 17: cannot find include file "string"
+	not in /nasa/hdf5/1.6.5/serial/include/string
+	not in /nasa/sgi/mpt/1.25/include/string
+	not in ./string
+	not in /usr/include/string
+makedepend: warning:  AnalysisBaseClass.C, line 4: cannot find include file "map"
+	not in /nasa/hdf5/1.6.5/serial/include/map
+	not in /nasa/sgi/mpt/1.25/include/map
+	not in ./map
+	not in /usr/include/map
+makedepend: warning:  CommunicationCollectParticles.C, line 26: cannot find include file "algorithm"
+	not in /nasa/hdf5/1.6.5/serial/include/algorithm
+	not in /nasa/sgi/mpt/1.25/include/algorithm
+	not in ./algorithm
+	not in /usr/include/algorithm
+makedepend: warning:  CommunicationMergeStarParticle.C, line 23: cannot find include file "map"
+	not in /nasa/hdf5/1.6.5/serial/include/map
+	not in /nasa/sgi/mpt/1.25/include/map
+	not in ./map
+	not in /usr/include/map
+makedepend: warning:  CommunicationMergeStarParticle.C, line 24: cannot find include file "string"
+	not in /nasa/hdf5/1.6.5/serial/include/string
+	not in /nasa/sgi/mpt/1.25/include/string
+	not in ./string
+	not in /usr/include/string
+makedepend: warning:  CommunicationShareParticles.C, line 21: cannot find include file "algorithm"
+	not in /nasa/hdf5/1.6.5/serial/include/algorithm
+	not in /nasa/sgi/mpt/1.25/include/algorithm
+	not in ./algorithm
+	not in /usr/include/algorithm
+makedepend: warning:  CommunicationShareStars.C, line 21: cannot find include file "algorithm"
+	not in /nasa/hdf5/1.6.5/serial/include/algorithm
+	not in /nasa/sgi/mpt/1.25/include/algorithm
+	not in ./algorithm
+	not in /usr/include/algorithm
+makedepend: warning:  CommunicationTransferParticlesOpt.C, line 20: cannot find include file "algorithm"
+	not in /nasa/hdf5/1.6.5/serial/include/algorithm
+	not in /nasa/sgi/mpt/1.25/include/algorithm
+	not in ./algorithm
+	not in /usr/include/algorithm
+makedepend: warning:  CommunicationTransferStarsOpt.C, line 21: cannot find include file "algorithm"
+	not in /nasa/hdf5/1.6.5/serial/include/algorithm
+	not in /nasa/sgi/mpt/1.25/include/algorithm
+	not in ./algorithm
+	not in /usr/include/algorithm
+makedepend: warning:  DepositParticleMassFlaggingField.C, line 21: cannot find include file "algorithm"
+	not in /nasa/hdf5/1.6.5/serial/include/algorithm
+	not in /nasa/sgi/mpt/1.25/include/algorithm
+	not in ./algorithm
+	not in /usr/include/algorithm
+makedepend: warning:  DetermineParallelism.C, line 27: cannot find include file "map"
+	not in /nasa/hdf5/1.6.5/serial/include/map
+	not in /nasa/sgi/mpt/1.25/include/map
+	not in ./map
+	not in /usr/include/map
+makedepend: warning:  DetermineParallelism.C, line 28: cannot find include file "string"
+	not in /nasa/hdf5/1.6.5/serial/include/string
+	not in /nasa/sgi/mpt/1.25/include/string
+	not in ./string
+	not in /usr/include/string
+makedepend: warning:  FOF_nrutil.C, line 9: cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  Grid_MergePausedPhotonPackages.C, line 18: cannot find include file "algorithm"
+	not in /nasa/hdf5/1.6.5/serial/include/algorithm
+	not in /nasa/sgi/mpt/1.25/include/algorithm
+	not in ./algorithm
+	not in /usr/include/algorithm
+makedepend: warning:  Grid_RegridPausedPhotonPackage.C, line 19: cannot find include file "algorithm"
+	not in /nasa/hdf5/1.6.5/serial/include/algorithm
+	not in /nasa/sgi/mpt/1.25/include/algorithm
+	not in ./algorithm
+	not in /usr/include/algorithm
+makedepend: warning:  Group_ReadDataHierarchy.C, line 25: cannot find include file "map"
+	not in /nasa/hdf5/1.6.5/serial/include/map
+	not in /nasa/sgi/mpt/1.25/include/map
+	not in ./map
+	not in /usr/include/map
+makedepend: warning:  LoadBalanceHilbertCurve.C, line 22: cannot find include file "algorithm"
+	not in /nasa/hdf5/1.6.5/serial/include/algorithm
+	not in /nasa/sgi/mpt/1.25/include/algorithm
+	not in ./algorithm
+	not in /usr/include/algorithm
+makedepend: warning:  LoadBalanceHilbertCurveRootGrids.C, line 22: cannot find include file "algorithm"
+	not in /nasa/hdf5/1.6.5/serial/include/algorithm
+	not in /nasa/sgi/mpt/1.25/include/algorithm
+	not in ./algorithm
+	not in /usr/include/algorithm
+makedepend: warning:  MemoryAllocationRoutines.C, line 16: cannot find include file "new"
+	not in /nasa/hdf5/1.6.5/serial/include/new
+	not in /nasa/sgi/mpt/1.25/include/new
+	not in ./new
+	not in /usr/include/new
+makedepend: warning:  Options.C (reading /usr/include/strings.h, line 29): cannot find include file "stddef.h"
+	not in /nasa/hdf5/1.6.5/serial/include/stddef.h
+	not in /nasa/sgi/mpt/1.25/include/stddef.h
+	not in ./stddef.h
+	not in /usr/include/stddef.h
+makedepend: warning:  ReadDataHierarchy.C, line 22: cannot find include file "map"
+	not in /nasa/hdf5/1.6.5/serial/include/map
+	not in /nasa/sgi/mpt/1.25/include/map
+	not in ./map
+	not in /usr/include/map
+makedepend: warning:  ReadParameterFile.C, line 28: cannot find include file "vector"
+	not in /nasa/hdf5/1.6.5/serial/include/vector
+	not in /nasa/sgi/mpt/1.25/include/vector
+	not in ./vector
+	not in /usr/include/vector
+makedepend: warning:  UpdateFromFinerGrids.C includes performance.h more than once!
+Already have
+	/nasa/sgi/mpt/1.25/include/mpi.h
+	/usr/include/stdio.h
+	performance.h
+	ErrorExceptions.h
+makedepend: warning:  comm_move_grid_tests.C (reading enzo_unit_tests.h, line 56): cannot find include file "map"
+	not in /nasa/hdf5/1.6.5/serial/include/map
+	not in /nasa/sgi/mpt/1.25/include/map
+	not in ./map
+	not in /usr/include/map
+makedepend: error:  out of space: increase MAXFILES

@@ -1,0 +1,203 @@
+./Grid.h:
+ 1179 :    float* AccessSNColour();
+ 1612 :   int IdentifyColourFields(int &SNColourNum, int &MetalNum, int &MBHColourNum,
+./Grid_AccessBaryonFields.C:
+  176 : float* grid::AccessSNColour() {
+  177 :   int SNColourNum = -1;
+  178 :   if ((SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields))<0) 
+  180 :   return BaryonField[SNColourNum];
+./Grid_AddFeedbackSphere.C:
+   96 :   /* Find Metallicity or SNColour field and set flag. */
+   98 :   int SNColourNum, MetalNum, Metal2Num, MBHColourNum, Galaxy1ColourNum, 
+  102 :   if (this->IdentifyColourFields(SNColourNum, Metal2Num, MBHColourNum, 
+  107 :   MetalNum = max(Metal2Num, SNColourNum);
+  109 :   if (MetalNum > 0 && SNColourNum > 0 && cstar->type == PopIII)
+  110 :     MetalNum = SNColourNum;
+  961 : 	    if (SNColourNum > 0)
+  962 : 	      BaryonField[SNColourNum][index] *= factor;
+./Grid_AddFields.C:
+   47 :       value = (TypesToAdd[i] == SNColour || TypesToAdd[i] == Metallicity) ?
+./Grid_CollapseTestInitializeGrid.C:
+  127 :     FieldType[MetalNum = NumberOfBaryonFields++] = SNColour;
+./Grid_ComputeCoolingTime.C:
+  173 :   int MetalNum = 0, SNColourNum = 0;
+  179 :   SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+  180 :   MetalFieldPresent = (MetalNum != -1 || SNColourNum != -1);
+  196 :   if (MetalNum != -1 && SNColourNum != -1) {
+  199 :       TotalMetals[i] = BaryonField[MetalNum][i] + BaryonField[SNColourNum][i];
+  205 :     else if (SNColourNum != -1)
+  206 :       //MetalPointer = BaryonField[SNColourNum];
+./Grid_ComputeLuminosity.C:
+  150 :     MetalNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+./Grid_ComputeTemperatureField.C:
+   95 :     MetalNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+./Grid_FlagCellsToBeRefinedByMetallicity.C:
+   53 :   int MetalNum, SNColourNum;
+   55 :   SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+   57 :   if (MetalNum < 0 && SNColourNum < 0) {
+   82 :   if (SNColourNum > 0)
+   84 :       if( (BaryonField[SNColourNum][i]/BaryonField[DensNum][i])/0.022 
+./Grid_GetEnclosedMass.C:
+   91 :   int UseColour = FALSE, SNColourNum;
+   92 :   if ((SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields)) 
+   96 :     SNColourNum = 0;
+  154 : 	    metallicity += BaryonField[SNColourNum][index] * MassConversion;
+  233 :   int UseColour = FALSE, SNColourNum;
+  234 :   if ((SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields)) 
+  237 :     SNColourNum = 0;
+  239 :     SNColourNum = 0;
+  295 : 	    metallicity += BaryonField[SNColourNum][index] * MassConversion;
+./Grid_GetEnclosedMassInShell.C:
+  100 :   int UseColour = FALSE, SNColourNum;
+  101 :   if ((SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields)) 
+  104 :     SNColourNum = 0; //by Jo
+  106 :     SNColourNum = 0;
+  164 : 	    metallicity3 += BaryonField[SNColourNum][index] * MassConversion;
+./Grid_IdentifyColourFields.C:
+   29 : int grid::IdentifyColourFields(int &SNColourNum, int &MetalNum, int &MBHColourNum,
+   33 :   SNColourNum = MetalNum = MBHColourNum = Galaxy1ColourNum = Galaxy2ColourNum = 0;
+   35 :   SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+   42 :   if ((SNColourNum < 0) && (MetalNum < 0) && (MBHColourNum < 0) && 
+./Grid_ParticleSplitter.C:
+   96 :   int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum; 
+   99 :   if (this->IdentifyColourFields(SNColourNum, MetalNum, MBHColourNum, 
+  104 :   MetalNum = max(MetalNum, SNColourNum);
+./Grid_ProjectToPlane2.C:
+  117 :   int SNColourField = FALSE, SNColourNum;
+  118 :   if ((SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields)) 
+  120 :     SNColourField = TRUE;
+  122 :     SNColourNum = 0;
+  124 :   if ((SNColourField || MetallicityField) && CoolData.metals != NULL)
+  307 :   if (SNColourField == TRUE) {
+  310 :       temp_field[i] = BaryonField[SNColourNum][i] / BaryonField[DensNum][i];
+./Grid_SolveHydroEquations.C:
+  174 :     int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum; 
+  176 :     if (this->IdentifyColourFields(SNColourNum, MetalNum, MBHColourNum, 
+  189 :     if (SNColourNum      != -1) colnum[NumberOfColours++] = SNColourNum;
+./Grid_SolveOneZoneFreefall.C:
+  101 :   int MetalNum = 0, SNColourNum = 0;
+  107 :   SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+  108 :   MetalFieldPresent = (MetalNum != -1 || SNColourNum != -1);
+./Grid_SolveRadiativeCooling.C:
+  198 :   int MetalNum = 0, SNColourNum = 0;
+  204 :   SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+  205 :   MetalFieldPresent = (MetalNum != -1 || SNColourNum != -1);
+  221 :   if (MetalNum != -1 && SNColourNum != -1) {
+  224 :       TotalMetals[i] = BaryonField[MetalNum][i] + BaryonField[SNColourNum][i];
+  230 :     else if (SNColourNum != -1)
+  231 :       MetalPointer = BaryonField[SNColourNum];
+./Grid_SolveRateAndCoolEquations.C:
+  188 :   int MetalNum = 0, SNColourNum = 0;
+  194 :   SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+  195 :   MetalFieldPresent = (MetalNum != -1 || SNColourNum != -1);
+  211 :   if (MetalNum != -1 && SNColourNum != -1) {
+  214 :       TotalMetals[i] = BaryonField[MetalNum][i] + BaryonField[SNColourNum][i];
+  220 :     else if (SNColourNum != -1)
+  221 :       MetalPointer = BaryonField[SNColourNum];
+./Grid_SolveRateEquations.C:
+  106 :     MetalNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+./Grid_StarParticleHandler.C:
+  409 :   int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum; 
+  411 :   if (this->IdentifyColourFields(SNColourNum, MetalNum, MBHColourNum, 
+  504 :   MetallicityField = (MetalNum != -1 || SNColourNum != -1);
+  506 :   if (MetalNum != -1 && SNColourNum != -1) {
+  509 :       TotalMetals[i] = BaryonField[MetalNum][i] + BaryonField[SNColourNum][i];
+  515 :     else if (SNColourNum != -1)
+  516 :       // MetalPointer = BaryonField[SNColourNum];
+./Grid_SubtractAccretedMassFromSphere.C:
+   84 :   /* Find Metallicity or SNColour field and set flag. */
+   86 :   int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum; 
+   89 :   if (this->IdentifyColourFields(SNColourNum, MetalNum, MBHColourNum, 
+   94 :   MetalNum = max(MetalNum, SNColourNum);
+./RadiativeTransferInitialize.C:
+  154 : 	TypesToAdd[FieldsToAdd++] = SNColour;
+  183 :             (TypesToAdd[i] == Metallicity && ExistingTypes[j] == SNColour)) {
+  285 :     case SNColour:
+./RadiativeTransferInitialize.C.orig:
+  154 : 	TypesToAdd[FieldsToAdd++] = SNColour;
+  283 :     case SNColour:
+./Star_SubtractAccretedMassFromCell.C:
+   75 :   /* Find Metallicity or SNColour field and set flag. */
+   77 :   int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum; 
+   80 :   if (CurrentGrid->IdentifyColourFields(SNColourNum, MetalNum, MBHColourNum, 
+   85 :   MetalNum = max(MetalNum, SNColourNum);
+./WriteStreamData.C:
+  218 :     if (!(MovieDataField[i] == Density || MovieDataField[i] == SNColour ||
+./hydro_rk/Grid_ReturnHydroRKPointers.C:
+  106 :   int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum; 
+  108 :   if (this->IdentifyColourFields(SNColourNum, MetalNum, MBHColourNum, 
+  122 :   if (SNColourNum      != -1) Prim[nfield++] = BaryonField[SNColourNum];  
+./hydro_rk/Grid_ReturnOldHydroRKPointers.C:
+  104 :   int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum; 
+  106 :   if (this->IdentifyColourFields(SNColourNum, MetalNum, MBHColourNum, 
+  120 :   if (SNColourNum      != -1) Prim[nfield++] = OldBaryonField[SNColourNum];  
+./hydro_rk/Grid_SetNumberOfColours.C:
+   41 :   int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum; 
+   43 :   if (this->IdentifyColourFields(SNColourNum, MetalNum, MBHColourNum, 
+   51 :   	  SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum); 
+   61 :   if (SNColourNum      != -1) _nc++;
+./python_bridge/enzo_field_types.pxi:
+   22 :     enum: SNColour
+  134 :     "SNColour" : SNColour,
+./sn.txt:
+    2 :  1179 :    float* AccessSNColour();
+    3 :  1612 :   int IdentifyColourFields(int &SNColourNum, int &MetalNum, int &MBHColourNum,
+    5 :   176 : float* grid::AccessSNColour() {
+    6 :   177 :   int SNColourNum = -1;
+    7 :   178 :   if ((SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields))<0) 
+    8 :   180 :   return BaryonField[SNColourNum];
+   10 :    96 :   /* Find Metallicity or SNColour field and set flag. */
+   11 :    98 :   int SNColourNum, MetalNum, Metal2Num, MBHColourNum, Galaxy1ColourNum, 
+   12 :   102 :   if (this->IdentifyColourFields(SNColourNum, Metal2Num, MBHColourNum, 
+   13 :   107 :   MetalNum = max(Metal2Num, SNColourNum);
+   14 :   109 :   if (MetalNum > 0 && SNColourNum > 0 && cstar->type == PopIII)
+   15 :   110 :     MetalNum = SNColourNum;
+   16 :   961 : 	    if (SNColourNum > 0)
+   17 :   962 : 	      BaryonField[SNColourNum][index] *= factor;
+   19 :    47 :       value = (TypesToAdd[i] == SNColour || TypesToAdd[i] == Metallicity) ?
+   21 :   127 :     FieldType[MetalNum = NumberOfBaryonFields++] = SNColour;
+   23 :   173 :   int MetalNum = 0, SNColourNum = 0;
+   24 :   179 :   SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+   25 :   180 :   MetalFieldPresent = (MetalNum != -1 || SNColourNum != -1);
+   26 :   196 :   if (MetalNum != -1 && SNColourNum != -1) {
+   27 :   199 :       TotalMetals[i] = BaryonField[MetalNum][i] + BaryonField[SNColourNum][i];
+   28 :   205 :     else if (SNColourNum != -1)
+   29 :   206 :       //MetalPointer = BaryonField[SNColourNum];
+   31 :   150 :     MetalNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+   33 :    95 :     MetalNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+   35 :    53 :   int MetalNum, SNColourNum;
+   36 :    55 :   SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+   37 :    57 :   if (MetalNum < 0 && SNColourNum < 0) {
+   38 :    82 :   if (SNColourNum > 0)
+   39 :    84 :       if( (BaryonField[SNColourNum][i]/BaryonField[DensNum][i])/0.022 
+   41 :    91 :   int UseColour = FALSE, SNColourNum;
+   42 :    92 :   if ((SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields)) 
+   43 :    96 :     SNColourNum = 0;
+   44 :   154 : 	    metallicity += BaryonField[SNColourNum][index] * MassConversion;
+   45 :   233 :   int UseColour = FALSE, SNColourNum;
+   46 :   234 :   if ((SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields)) 
+   47 :   237 :     SNColourNum = 0;
+   48 :   239 :     SNColourNum = 0;
+   49 :   295 : 	    metallicity += BaryonField[SNColourNum][index] * MassConversion;
+   51 :   100 :   int UseColour = FALSE, SNColourNum;
+   52 :   101 :   if ((SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields)) 
+   53 :   104 :     SNColourNum = 0; //by Jo
+   54 :   106 :     SNColourNum = 0;
+   55 :   164 : 	    metallicity3 += BaryonField[SNColourNum][index] * MassConversion;
+   57 :    29 : int grid::IdentifyColourFields(int &SNColourNum, int &MetalNum, int &MBHColourNum,
+   58 :    33 :   SNColourNum = MetalNum = MBHColourNum = Galaxy1ColourNum = Galaxy2ColourNum = 0;
+   59 :    35 :   SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields);
+   60 :    42 :   if ((SNColourNum < 0) && (MetalNum < 0) && (MBHColourNum < 0) && 
+   62 :    96 :   int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum; 
+   63 :    99 :   if (this->IdentifyColourFields(SNColourNum, MetalNum, MBHColourNum, 
+   64 :   104 :   MetalNum = max(MetalNum, SNColourNum);
+   66 :   117 :   int SNColourField = FALSE, SNColourNum;
+   67 :   118 :   if ((SNColourNum = FindField(SNColour, FieldType, NumberOfBaryonFields)) 
+   68 :   120 :     SNColourField = TRUE;
+   69 :   122 :     SNColourNum = 0;
+   70 :   124 :   if ((SNColourField || MetallicityField) && CoolData.metals != NULL)
+   71 :   307 :   if (SNColourField == TRUE) {
+   72 :   310 :       temp_field[i] = BaryonField[SNColourNum][i] / BaryonField[DensNum][i];
+   74 :   174 :     int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum; 
+./typedefs.h:
+   68 :   SNColour        = 19,

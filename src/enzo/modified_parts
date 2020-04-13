@@ -1,0 +1,66 @@
+./Star_ComputePhotonRates.C_prev:129:#define GMC_TEST //#####
+./Star_ComputePhotonRates.C_prev:162:      Q[0] *= 1 / (1 + exp(-50*(this->last_accretion_rate/mdot_Edd - 0.1))); //#####
+./Star_ComputePhotonRates.C_prev:180:      E[0] = ReturnValuesFromSpectrumTable(0.0, 0.0, 3); //##### mean energy if column density=0
+./StarParticleMergeMBH.C:82:#define GMC_TEST //#####
+./StarRoutines.C:351:#define GMC_TEST  //#####
+./StarRoutines.C:369:#define GMC_TEST_6  //#####  for 080112_CHaRGe/1e13vb_aRTF
+./Star_HitEndpoint.C:28:#define GMC_TEST_5  //##### for 121512_dGF-RTF
+./Star_HitEndpoint.C:99:#ifdef GMC_TEST_5  //#####  THIS HAD NO IMPACT...  You stupid...  (check the first if statement in this file -> particle type stayed the same but never listed as Star after first timestep, 12/2012)
+./StarParticleSubtractAccretedMass.C:94:#define GMC_TEST_6 //#####  for 080112_CHaRGe/1e13vb_aRTF
+./Star_IsARadiationSource.C:51:#define GMC_TEST_6 //#####  for 080112_CHaRGe/1e13vb_aRTF
+./Star_IsARadiationSource.C:54:  //rules[1] = BirthTime < 0; //##### quick test on 03/16/2017 for /u/jkim30/work/enzo-runs/080112_CHaRGe/ic.enzo_1e13vb_nocv_z=6_MBH_noStarRad/DD0261; see your note email in the Draft folder
+./Grid_StarParticleHandler.C:839:#define GMC_TEST_5 //#####  for 121512_dGF-RTF, also check star_maker7.F for additional GMC_TEST changes
+./Grid_StarParticleHandler.C:1265:// #define GMC_TEST //##### 
+./StarParticleFinalize.C:88:#define GMC_TEST //#####
+./StarParticleFinalize.C:160:#define GMC_TEST_6 //#####  for 080112_CHaRGe/1e13vb_aRTF
+./star_maker7.F:416:#define NO_KINETIC_FEEDBACK  !#####
+./star_maker7.F:443:#define GMC_TEST  !#####  feedback for GMC particle (type=8, temporarily)
+./star_maker7.F:463:#define GMC_TEST_5 !#####  for 121512_dGF-RTF
+./star_maker7.F:481:cc        !#####  for GMC particle (type=8), SF is peaked at 5 Myrs 
+./star_maker7.F:539:#ifdef GMC_TEST_5 !#####  SNIa: no mass return, for 121512_dGF-RTF
+./star_maker7.F:560:c#ifdef GMC_TEST_5 !#####  SNIa: energy proportional to mp(n), for 121512_dGF-RTF
+./Grid_Shine.C:130:#define GMC_TEST //#####
+./Grid_Shine.C:139:#define GMC_TEST_6 //#####
+./Grid_Shine.C:230:	if (RadiativeTransferTraceSpectrum) NewPack->Type = 5;  //#####
+./Grid_FindAllStarParticles.C:97:#define NO_GMC_TEST_REMOVE_EXISTING //#####
+./Grid_FindAllStarParticles.C:105:#define GMC_TEST //##### identify as Stars only without a certain radius from a center
+./Grid_SolveForPotential.C:75:    InverseVolumeElement *= (GravitatingMassFieldDimension[dim] - 1);  //#####
+./Grid_UpdateStarParticles.C:42:// #define GMC_TEST  //#####
+./hydro_rk/Grid_UpdatePrim.C:70:  this->ReturnHydroRKPointers(Prim, false);         //##### species in Prim[] are already fractions fractionalized in Grid_RK2_[12]Step -> ReturnHydroRKPointer, thus no need for ReturnMassFraction
+./hydro_rk/Grid_UpdateMHDPrim.C:148:  // ORIGINAL   //#####
+./Grid_WalkPhotonPackage.C:462:#define GMC_TEST //#####
+./Grid_WalkPhotonPackage.C:614:#ifdef GMC_TEST //#####
+./Grid_WalkPhotonPackage.C:644:#ifdef GMC_TEST_4 //#####
+./Grid_WalkPhotonPackage.C:703:#ifdef GMC_TEST_4 //#####
+./Grid_WalkPhotonPackage.C:717:#ifdef GMC_TEST_4 //#####
+./Grid_WalkPhotonPackage.C:741:      for (i = 0; i < 3; i++) {   //##### for TraceSpectrum test 3 -> 1
+./Grid_AddFeedbackSphere.C:536:#define GMC_TEST //#####
+./Grid_AddFeedbackSphere.C:543:#define GMC_TEST_6 //#####  for 080112_CHaRGe/1e13vb_aRTF
+./Grid_AddFeedbackSphere.C:715:	sqrt(1 - 1 / (1 + exp(-50*(cstar->last_accretion_rate/mdot_Edd - 0.1)))); //#####
+./mbh_maker.C:122:#define GMC_TEST_6  //#####  for 080112_CHaRGe/1e13vb_aRTF   
+./Star_SetFeedbackFlag.C:113:#define GMC_TEST_6 //#####  for 080112_CHaRGe/1e13vb_aRTF
+./Grid_FinalizeRadiationFields.C:78:#ifdef GMC_TEST_3 //#####
+./Grid_FinalizeRadiationFields.C:92:#ifdef GMC_TEST_3 //#####
+./Star_Accrete.C:109:#define GMC_TEST //#####
+./Star_Accrete.C:113:	  last_accretion_rate*yr, time, accretion_time[0], this_dt, DeltaMass, Mass); //#####
+./Star_Accrete.C:116:#define GMC_TEST_6 //#####  for 080112_CHaRGe/1e13vb_aRTF
+./Star_Accrete.C:119:	  last_accretion_rate*yr, time, accretion_time[0], this_dt, DeltaMass, Mass); //#####
+./WriteStarParticleData.C:53:#define GMC_TEST_6 //#####  for 080112_CHaRGe/1e13vb_aRTF
+./RadiativeTransferInitialize.C:181://      if (TypesToAdd[i] == ExistingTypes[j]) {     //#####
+./Grid_DepositBaryons.C_tom_fix:110:			   TargetGrid->GravitatingMassFieldCellSize) ; //- 1;   //#####
+./Grid_DepositBaryons.C_tom_fix:131:			   TargetGrid->GravitatingMassFieldCellSize - 1);   //#####
+./Star_ComputePhotonRates.C:133:#ifdef GMC_TEST //#####
+./Star_ComputePhotonRates.C:146:#define GMC_TEST_5 //#####  for 121512_dGF-RTF
+./Star_ComputePhotonRates.C:147:#ifdef GMC_TEST_5 //#####
+./Star_ComputePhotonRates.C:166:#define GMC_TEST_6  //#####  for 080112_CHaRGe/1e13vb_aRTF, UV bin only for the real MBH, check your notes, 
+./Star_ComputePhotonRates.C:167:#ifdef GMC_TEST_6 //#####
+./Star_ComputePhotonRates.C:198:      Q[0] *= 1 / (1 + exp(-50*(this->last_accretion_rate/mdot_Edd - 0.1))); //#####
+./Star.h:131:#define GMC_TEST //##### 
+./Grid_FindNewStarParticles.C:62:#define GMC_TEST //##### identify as Stars only within or outside a certain radius from a center
+./Grid_FindNewStarParticles.C:99:#define NO_GMC_TEST_2 //##### identify as Stars only within a certain radius from a rotating center
+./Star_AccreteAngularMomentum.C:40:#define GMC_TEST_6 //#####  for 080112_CHaRGe/1e13vb_aRTF
+./cool1d_multi.F:779:#define GMC_TEST  !#####
+./cool1d_multi.F:781:               metalc(i) = metalc(i) * d(i,j,k) * dom   !##### THIS IS NEEDED!? 
+./cool1d_multi.F:789:#ifdef UNUSED   !#####
+./Star_CalculateMassAccretion.C:39:#define GMC_TEST_6 //#####  for 080112_CHaRGe/1e13vb_aRTF
+./Star_CalculateMassAccretion.C:313:#define GMC_TEST //#####

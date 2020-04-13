@@ -1,0 +1,76 @@
+./FluxFix_Grid_CorrectForRefinedFluxes.C:
+  380 : 		FieldType[field] < Metallicity) || FieldType[field] == ExtraType0) &&
+  752 : 		FieldType[field] < Metallicity) || FieldType[field] == ExtraType0) &&
+./Grid.h:
+ 1181 :    float* AccessExtraType0();
+ 1182 :    float* AccessExtraType1();
+ 1616 : 			   int &Galaxy1ColourNum, int &Galaxy2ColourNum, int &ExtraType0Num);
+./Grid_AccessBaryonFields.C:
+  191 : // ExtraType0 field 
+  192 : float* grid::AccessExtraType0() {
+  194 :   if ((ExtraNum = FindField(ExtraType0, FieldType, NumberOfBaryonFields))<0) 
+  199 : // ExtraType1 field 
+  200 : float* grid::AccessExtraType1() {
+  202 :   if ((ExtraNum = FindField(ExtraType1, FieldType, NumberOfBaryonFields))<0) 
+./Grid_CoolingTestInitializeGrid.C:
+   91 :       FieldType[ExtraField[0] = NumberOfBaryonFields++] = ExtraType0;
+   92 :       FieldType[ExtraField[1] = NumberOfBaryonFields++] = ExtraType1;
+./Grid_CorrectForRefinedFluxes.C:
+  223 : 	      FieldType[field] <= Metallicity) || FieldType[field] == ExtraType0) &&
+  409 : 	      FieldType[field] <= Metallicity) || FieldType[field] == ExtraType0) &&
+./Grid_CosmologySimulationInitializeGrid.C:
+  271 : 	FieldType[ExtraField[0] = NumberOfBaryonFields++] = ExtraType0;
+  272 : 	FieldType[ExtraField[1] = NumberOfBaryonFields++] = ExtraType1;
+./Grid_CreateFieldArray.C:
+  102 :   {ExtraType0,"ExtraType0", 0},
+  103 :   {ExtraType1,"ExtraType1", 0},
+./Grid_IdentifyColourFields.C:
+   54 : 			       int &Galaxy1ColourNum, int &Galaxy2ColourNum, int &ExtraType0Num)
+   64 :   ExtraType0Num = FindField(ExtraType0, FieldType, NumberOfBaryonFields);
+./Grid_InitializeUniformGrid.C:
+  100 :       FieldType[ExtraField[0] = NumberOfBaryonFields++] = ExtraType0;
+  101 :       FieldType[ExtraField[1] = NumberOfBaryonFields++] = ExtraType1;
+./Grid_InterpolateBoundaryFromParent.C:
+  377 :   //if (FieldType[field] == ExtraType0) ;
+./Grid_InterpolateFieldValues.C:
+  355 :   //if (FieldType[field] == ExtraType0) ;
+./Grid_NestedCosmologySimulationInitializeGrid.C:
+  384 : 	FieldType[ExtraField[0] = NumberOfBaryonFields++] = ExtraType0;
+  385 : 	FieldType[ExtraField[1] = NumberOfBaryonFields++] = ExtraType1;
+./Grid_OneZoneFreefallTestInitializeGrid.C:
+   91 :       FieldType[ExtraField[0] = NumberOfBaryonFields++] = ExtraType0;
+   92 :       FieldType[ExtraField[1] = NumberOfBaryonFields++] = ExtraType1;
+./Grid_SolveHydroEquations.C:
+  174 :     int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum, ExtraType0Num; 
+  177 : 				   Galaxy1ColourNum, Galaxy2ColourNum, ExtraType0Num) == FAIL) {
+  184 : 	colnum[NumberOfColours++] = MetalNum+1; //ExtraType0
+  185 : 	colnum[NumberOfColours++] = MetalNum+2; //ExtraType1
+  193 :     if (ExtraType0Num    != -1) colnum[NumberOfColours++] = ExtraType0Num;
+./Grid_StarParticleHandler.C:
+  468 :     if (FieldType[field] >= ElectronDensity && FieldType[field] <= ExtraType1)
+  472 :          baryons field is used, but no longer needed since it is set to <=ExtraType1
+ 1108 :     if (FieldType[field] >= ExtraType0 && 
+ 1109 : 	FieldType[field] <= ExtraType1) {
+ 1113 :          baryons field is used, but no longer needed since it is set to <=ExtraType1
+ 1330 : 	FieldType[field] < ExtraType0) {
+ 1334 :          baryons field is used, but no longer needed since it is set to <=ExtraType1
+./Grid_SubtractAccretedMassFromSphere.C:
+   86 :   int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum, ExtraType0Num; 
+   90 : 				 Galaxy1ColourNum, Galaxy2ColourNum, ExtraType0Num) == FAIL) {
+  189 :       BaryonField[ExtraType0Num][index] *= increase;
+./ProblemType.C:
+  179 :       tg->FieldType[ExtraField[0] = tg->NumberOfBaryonFields++] = ExtraType0;
+  180 :       tg->FieldType[ExtraField[1] = tg->NumberOfBaryonFields++] = ExtraType1;
+./Star_SubtractAccretedMassFromCell.C:
+   77 :   int SNColourNum, MetalNum, MBHColourNum, Galaxy1ColourNum, Galaxy2ColourNum, ExtraType0Num; 
+   81 : 					Galaxy1ColourNum, Galaxy2ColourNum, ExtraType0Num) == FAIL) {
+  165 :     CurrentGrid->BaryonField[ExtraType0Num][index] *= factor;  //by Jo
+./python_bridge/enzo_field_types.pxi:
+   24 :     enum: ExtraType0
+   25 :     enum: ExtraType1
+  136 :     "ExtraType0" : ExtraType0,
+  137 :     "ExtraType1" : ExtraType1,
+./typedefs.h:
+   70 :   ExtraType0      = 21,
+   71 :   ExtraType1      = 22,
+  172 :                  Metallicity, ExtraType0, ExtraType1, GravPotential,
