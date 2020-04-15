@@ -127,7 +127,7 @@ int Zeus_yTransport(float *d, float *e, float *u, float *v, float *w,
 	  colstar[ic][j] *= ueff[j];
 	    
 	for (j = js-2; j <= je+2; j++) 
-	  BaryonField[colnum[ic]][IDX(i,j,k)] += dt*(colstar[ic][j] - colstar[ic][j+1])/dy[j]*0.1; //by Jo
+	  BaryonField[colnum[ic]][IDX(i,j,k)] += dt*(colstar[ic][j] - colstar[ic][j+1])/dy[j]; //*0.1; //by Jo
       }
 
 //    Compute energy flux

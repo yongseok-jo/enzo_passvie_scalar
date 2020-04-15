@@ -1,1 +1,1 @@
-CONFIG_MACHINE = linux-openmpi
+CONFIG_MACHINE = linux-nurion
