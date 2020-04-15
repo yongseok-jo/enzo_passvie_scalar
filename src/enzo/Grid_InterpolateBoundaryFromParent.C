@@ -360,6 +360,9 @@ int grid::InterpolateBoundaryFromParent(grid *ParentGrid)
 	InterpolationMethod = (SecondOrderBFlag[field] == 0) ?
 	  SecondOrderA : SecondOrderC;
  
+  	//if (FieldType[field] == ExtraType0) 
+		//				printf("SecondOrderBFlag[field] = %d\n", SecondOrderBFlag[field]); // by Jo just to check 
+
       /* Interpolating from the ParentTemp field to a Temporary field.  This
 	 is done for the entire current grid, not just it's boundaries.
 	 (skip density since we did it already) */

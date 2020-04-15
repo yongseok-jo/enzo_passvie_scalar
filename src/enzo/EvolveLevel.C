@@ -783,7 +783,7 @@ int EvolveLevel(TopGridData *MetaData, LevelHierarchyEntry *LevelArray[],
      fluxes for this subgrid .
      (Note: this must be done after CorrectForRefinedFluxes). */
 
-    FinalizeFluxes(Grids,SubgridFluxesEstimate,NumberOfGrids,NumberOfSubgrids); // This does nearly nothing. e.g., Deallocate and delete fluxes
+    FinalizeFluxes(Grids,SubgridFluxesEstimate,NumberOfGrids,NumberOfSubgrids); // This does nearly nothing but deallocate and delete fluxes
 
     /* Recompute radiation field, if requested. */
     RadiationFieldUpdate(LevelArray, level, MetaData);

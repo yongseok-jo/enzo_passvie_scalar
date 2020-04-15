@@ -23,6 +23,8 @@ c     w       - z-velocity field
 ************************************************************************/
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #include "ErrorExceptions.h"
 #include "macros_and_parameters.h"
@@ -69,9 +71,10 @@ int Zeus_xTransport(float *d, float *e, float *u, float *v, float *w,
 
   /* Allocate space for colstar. */
 
-  for (ic = 0; ic < ncolor; ic++)
+  for (ic = 0; ic < ncolor; ic++){
     colstar[ic] = new float[in];
-
+		//memset(colstar, 0.0, in); // by Jo to test if the initialization of colstar will affect BaryonField.
+	}
 // 1) Transport step - x direction
 
 //  Compute the mass flux over the entire field
@@ -126,7 +129,7 @@ int Zeus_xTransport(float *d, float *e, float *u, float *v, float *w,
 	  colstar[ic][i] *= ueff[i];
 	    
 	for (i = is-2; i <= ie+2; i++) 
-	  BaryonField[colnum[ic]][IDX(i,j,k)] += dt*(colstar[ic][i] - colstar[ic][i+1])/dx[i]*0.1; //by Jo just for test
+	  BaryonField[colnum[ic]][IDX(i,j,k)] += dt*(colstar[ic][i] - colstar[ic][i+1])/dx[i]*0.5; //by Jo just for test
       }
 
 //    Compute energy flux
