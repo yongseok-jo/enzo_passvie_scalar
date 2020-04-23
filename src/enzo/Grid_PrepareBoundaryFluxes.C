@@ -48,13 +48,16 @@ void grid::PrepareBoundaryFluxes()
       BoundaryFluxes->LeftFluxStartGlobalIndex[j][dim] =
 	nlongint(( GridLeftEdge[dim] - DomainLeftEdge[dim]) /
 		 CellWidth[dim][0]);
+
       BoundaryFluxes->LeftFluxEndGlobalIndex[j][dim] = max(
 	 nlongint((GridRightEdge[dim] - DomainLeftEdge[dim]) /
 		  CellWidth[dim][0])-1,
 	 BoundaryFluxes->LeftFluxStartGlobalIndex[j][dim]);
+
       BoundaryFluxes->RightFluxStartGlobalIndex[j][dim] =
 	  nlongint(( GridLeftEdge[dim] - DomainLeftEdge[dim]) /
 		   CellWidth[dim][0]);
+
       BoundaryFluxes->RightFluxEndGlobalIndex[j][dim] = max(
 	 nlongint((GridRightEdge[dim] - DomainLeftEdge[dim]) /
 		  CellWidth[dim][0])-1,

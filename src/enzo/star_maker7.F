@@ -306,8 +306,8 @@ c
 c              Remove mass from grid
 c
                d(i,j,k) = (1.0 - starfraction)*d(i,j,k)
-               write(0,*) '2.starfraction: ', starfraction
-               write(6,*) '2.starfraction: ', starfraction
+c              write(0,*) '2.starfraction: ', starfraction
+c              write(6,*) '2.starfraction: ', starfraction
 
 c
 c               write(7+procnum,1000) level,bmass*starfraction,tcp(ii),
