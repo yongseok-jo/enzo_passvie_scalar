@@ -467,9 +467,6 @@ int grid::SolveHydroEquations(int CycleNumber, int NumberOfSubgrids,
     }
 
 
-		fprintf(stderr, "NumberOfColours=%d\n", NumberOfColours);
-		for (int test=0; test<NumberOfColours; test++) fprintf(stderr, "colornum[%d] = %d\n",test, colnum[test]);
-						
 
     if (HydroMethod == Zeus_Hydro)
       if (this->ZeusSolver(GammaField, UseGammaField, CycleNumber, 
