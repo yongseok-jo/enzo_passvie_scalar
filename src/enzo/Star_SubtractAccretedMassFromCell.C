@@ -162,10 +162,11 @@ int Star::SubtractAccretedMassFromCell(void)
   }
   if (MetallicityField == TRUE){
     CurrentGrid->BaryonField[MetalNum][index] *= factor;
-    CurrentGrid->BaryonField[ExtraType0Num][index] *= factor;  //by Jo
   } 
+	if (1){         //by Jo
+    CurrentGrid->BaryonField[ExtraType0Num][index] *= factor;  //by Jo
+	}
   if (MBHColourNum > 0)
-
     CurrentGrid->BaryonField[MBHColourNum][index] *= factor;    
 
   return SUCCESS;

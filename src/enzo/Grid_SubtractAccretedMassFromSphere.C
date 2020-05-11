@@ -189,7 +189,9 @@ int grid::SubtractAccretedMassFromSphere(Star *cstar, int level, float radius, f
 	  }
 	  
 	  if (MetallicityField == TRUE){
-	    BaryonField[MetalNum][index] *= increase; //by Jo
+	    BaryonField[MetalNum][index] *= increase; 
+		}
+		if (1){ //by Jo
       old_mass += BaryonField[ExtraType0Num][index];
       BaryonField[ExtraType0Num][index] *= increase;
       new_mass += BaryonField[ExtraType0Num][index];

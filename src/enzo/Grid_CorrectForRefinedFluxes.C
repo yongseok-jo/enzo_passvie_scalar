@@ -220,7 +220,7 @@ int grid::CorrectForRefinedFluxes(fluxes *InitialFluxes,
  
 	for (field = 0; field < NumberOfBaryonFields; field++)
 	  if ((FieldType[field] >= ElectronDensity &&
-	      FieldType[field] <= ExtraType1) &&          //by Jo
+	      FieldType[field] <= ExtraType0) &&          //by Jo
 	      FieldTypeIsRadiation(FieldType[field]) == FALSE)
 	    for (k = Start[2]; k <= End[2]; k++)
 	      for (j = Start[1]; j <= End[1]; j++) {
@@ -405,8 +405,7 @@ int grid::CorrectForRefinedFluxes(fluxes *InitialFluxes,
  
 	for (field = 0; field < NumberOfBaryonFields; field++)
 	  if ((FieldType[field] >= ElectronDensity &&
-
-	      FieldType[field] <= ExtraType1) &&
+	      FieldType[field] <= ExtraType0) &&      //by Jo
 	      FieldTypeIsRadiation(FieldType[field]) == FALSE)
 	    for (k = Start[2]; k <= End[2]; k++)
 	      for (j = Start[1]; j <= End[1]; j++) {

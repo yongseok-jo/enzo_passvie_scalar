@@ -578,8 +578,9 @@ int grid::StarParticleHandler(HierarchyEntry* SubgridPointer, int level,
 	    GridStartIndex[0];
 	  for (i = GridStartIndex[0]; i <= GridEndIndex[0]; i++, index++){
          if (FieldType[field]==ExtraType0){
-						//if (BaryonField[field][index] < 1e-4)
-						//					BaryonField[field][index] = 1e-4;
+						if (BaryonField[field][index] < 1e-4){
+											BaryonField[field][index] = 1e-5;
+						}
            	old_mass += BaryonField[field][index]
 											 *(pow(LengthUnits*CellWidthTemp,3))
 											 *DensityUnits; // To track the old field value by Jo
