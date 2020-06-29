@@ -20,7 +20,7 @@ MACH_FILE  = Make.mach.ubuntu-hardy
 
 
 LOCAL_HDF5_INSTALL = /home/kerex/private_packages/hdf5
-LOCAL_MPI = /home/kerex/private_packages/mpich
+LOCAL_MPI = /appl/mpich-3.3.1-intel
 
 #-----------------------------------------------------------------------
 # Compiler settings

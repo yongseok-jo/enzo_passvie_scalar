@@ -66,7 +66,8 @@ c
      &        pdim1, pdim2, pdim3
       real    chi1, chi2, chi3, 
      &        delf0, delf1, delf1new, delf2, delf2new, delf3, delf3new,
-     &        fbar, frac, fx(ijkn), fy(ijkn), fz(ijkn), s, sprime, one
+     &        fbar, frac, fx(ijkn), fy(ijkn), fz(ijkn), s, sprime, one,
+     &        grid_temp
       parameter (one=1.d0)
 c
       real    fbar_save(ijkn)
@@ -284,6 +285,23 @@ c
                fx(i) = delf2new + delf3new
                fy(i) = delf1new + delf3new
                fz(i) = delf1new + delf2new
+
+c               if (fx(i) .ge. 1000.d0) then
+c                  write(6,*) 'Someting wrong is happening!',
+c     &                 fx(i), fbar
+c                  return
+c              endif
+c
+c               if (fy(i) .ge. 1000.d0) then
+c                  write(6,*) 'Someting wrong is happening!', 
+c     &                 fy(i), fbar
+c                  return
+c              endif
+c               if (fz(i) .ge. 1000.d0) then
+c                  write(6,*) 'Someting wrong is happening!', 
+c     &                 fz(i), fbar
+c                  return
+c              endif
 c
                fbar_save(i) = fbar
 c
@@ -304,6 +322,14 @@ c
      &                       0.5d0*real(refine2))/real(refine2)*fy(i) +
      &                       (real(k1) + 0.5d0 - 
      &                       0.5d0*real(refine3))/real(refine3)*fz(i) )
+                        grid_temp = grid(gstart1+(i-1)*refine1+i1,
+     &                                   gstart2+(j-1)*refine2+j1,
+     &                                   gstart3+(k-1)*refine3+k1)
+                        if (abs(grid_temp - fbar_save(i))
+     &                       .gt. 3*fbar_save(i)) then
+                             write(6,*) 'grid-parent:', grid_temp,
+     &                       fbar_save(i)
+                        endif
                      enddo
                   enddo
                enddo

@@ -1,0 +1,171 @@
+47a48
+> #include "fortran_types.def"
+49c50
+<       integer MAX_REFINE, ijkn
+---
+>       INTG_PREC MAX_REFINE, ijkn
+56c57
+<       integer dim1, dim2, dim3, start1, start2, start3, 
+---
+>       INTG_PREC dim1, dim2, dim3, start1, start2, start3, 
+60c61
+<       real    parent(dim1, dim2, dim3), grid(gdim1, gdim2, gdim3),
+---
+>       R_PREC    parent(dim1, dim2, dim3), grid(gdim1, gdim2, gdim3),
+65c66
+<       integer i, i1, j, j1, k, k1, pstart1, pstart2, pstart3, 
+---
+>       INTG_PREC i, i1, j, j1, k, k1, pstart1, pstart2, pstart3, 
+67c68
+<       real    chi1, chi2, chi3, 
+---
+>       R_PREC    chi1, chi2, chi3, 
+69,71c70,71
+<      &        fbar, frac, fx(ijkn), fy(ijkn), fz(ijkn), s, sprime, one,
+<      &        grid_temp
+<       parameter (one=1.d0)
+---
+>      &        fbar, frac, fx(ijkn), fy(ijkn), fz(ijkn), s, sprime, one
+>       parameter (one=1._RKIND)
+73,74c73,74
+<       real    fbar_save(ijkn)
+<       integer nneg
+---
+>       R_PREC    fbar_save(ijkn)
+>       INTG_PREC nneg
+105c105
+<                work(i, j, k) = 0.125*(
+---
+>                work(i, j, k) = 0.125_RKIND*(
+154c154,155
+<      &             (fbar - work(i  , j  , k  )  ) .le. 0.0) delf0 = 0.d0
+---
+>      &             (fbar - work(i  , j  , k  )  ) .le. 0.0) 
+>      &              delf0 = 0.0
+160c161,162
+<      &             (fbar - work(i+1, j  , k  )  ) .le. 0.0) delf1 = 0.d0
+---
+>      &             (fbar - work(i+1, j  , k  )  ) .le. 0.0) 
+>      &              delf1 = 0.0
+166c168,169
+<      &             (fbar - work(i  , j+1, k  )  ) .le. 0.0) delf2 = 0.d0
+---
+>      &             (fbar - work(i  , j+1, k  )  ) .le. 0.0) 
+>      &              delf2 = 0.0
+172c175,176
+<      &             (fbar - work(i  , j  , k+1)  ) .le. 0.0) delf3 = 0.d0
+---
+>      &             (fbar - work(i  , j  , k+1)  ) .le. 0.0) 
+>      &              delf3 = 0.0
+178,179c182,184
+<                   delf0 = 1.d-5*sign(tiny, delf1 + delf2 + delf3)
+<                   sprime = 1.d0
+---
+>                   delf0 = 1.e-5_RKIND*sign(REAL(tiny,RKIND), 
+>      &                 delf1+delf2+delf3)
+>                   sprime = 1._RKIND
+182c187
+<                   sprime = min(max(s, 0.d0), 1.d0)
+---
+>                   sprime = min(max(s, 0.0), 1._RKIND)
+188,193c193,198
+<                chi1 = 1.d0
+<                chi2 = 1.d0
+<                chi3 = 1.d0
+<                if (delf1/delf0 .gt. 0.0) chi1 = 0.d0
+<                if (delf2/delf0 .gt. 0.0) chi2 = 0.d0
+<                if (delf3/delf0 .gt. 0.0) chi3 = 0.d0
+---
+>                chi1 = 1._RKIND
+>                chi2 = 1._RKIND
+>                chi3 = 1._RKIND
+>                if (delf1/delf0 .gt. 0.0) chi1 = 0.0
+>                if (delf2/delf0 .gt. 0.0) chi2 = 0.0
+>                if (delf3/delf0 .gt. 0.0) chi3 = 0.0
+197,199c202,204
+<                chi1 = (1.d0 - sprime)*chi1 + sprime*(1.d0 - chi1)
+<                chi2 = (1.d0 - sprime)*chi2 + sprime*(1.d0 - chi2)
+<                chi3 = (1.d0 - sprime)*chi3 + sprime*(1.d0 - chi3)
+---
+>                chi1 = (1._RKIND - sprime)*chi1 + sprime*(1._RKIND-chi1)
+>                chi2 = (1._RKIND - sprime)*chi2 + sprime*(1._RKIND-chi2)
+>                chi3 = (1._RKIND - sprime)*chi3 + sprime*(1._RKIND-chi3)
+204,207c209,212
+<                if (sprime .ne. 0.0 .and. sprime .ne. 1.0) then
+<                   chi1 = 0.d0
+<                   chi2 = 0.d0
+<                   chi3 = 0.d0
+---
+>                if (sprime .ne. 0.0 .and. sprime .ne. 1._RKIND) then
+>                   chi1 = 0.0
+>                   chi2 = 0.0
+>                   chi3 = 0.0
+212,214c217,219
+<                frac = - ( (-delf0*sprime) + (1.d0-chi1)*delf1 
+<      &                                    + (1.d0-chi2)*delf2
+<      &                                    + (1.d0-chi3)*delf3 ) /
+---
+>                frac = - ( (-delf0*sprime) + (1._RKIND-chi1)*delf1 
+>      &                                    + (1._RKIND-chi2)*delf2
+>      &                                    + (1._RKIND-chi3)*delf3 ) /
+217,218c222,223
+<                frac = min(frac, 1.d0)
+<                if (chi1+chi2+chi3 .eq. 0) frac = 0.d0
+---
+>                frac = min(frac, 1._RKIND)
+>                if (chi1+chi2+chi3 .eq. 0.0) frac = 0.0
+220c225
+<                frac = max(frac, 0.d0)
+---
+>                frac = max(frac, 0.0)
+231,233c236,238
+<                delf1new = frac*chi1*delf1 + (1.d0-chi1)*delf1
+<                delf2new = frac*chi2*delf2 + (1.d0-chi2)*delf2
+<                delf3new = frac*chi3*delf3 + (1.d0-chi3)*delf3
+---
+>                delf1new = frac*chi1*delf1 + (1._RKIND-chi1)*delf1
+>                delf2new = frac*chi2*delf2 + (1._RKIND-chi2)*delf2
+>                delf3new = frac*chi3*delf3 + (1._RKIND-chi3)*delf3
+288,304d292
+< 
+<                if (fx(i) .ge. 1000.d0) then
+<                   write(6,*) 'Someting wrong is happening!',
+<      &                 fx(i), fbar
+<                   return
+<               endif
+< 
+<                if (fy(i) .ge. 1000.d0) then
+<                   write(6,*) 'Someting wrong is happening!', 
+<      &                 fy(i), fbar
+<                   return
+<               endif
+<                if (fz(i) .ge. 1000.d0) then
+<                   write(6,*) 'Someting wrong is happening!', 
+<      &                 fz(i), fbar
+<                   return
+<               endif
+319,332c307,315
+<      &                       (real(i1) + 0.5d0 - 
+<      &                       0.5d0*real(refine1))/real(refine1)*fx(i) +
+<      &                       (real(j1) + 0.5d0 - 
+<      &                       0.5d0*real(refine2))/real(refine2)*fy(i) +
+<      &                       (real(k1) + 0.5d0 - 
+<      &                       0.5d0*real(refine3))/real(refine3)*fz(i) )
+<                         grid_temp = grid(gstart1+(i-1)*refine1+i1,
+<      &                                   gstart2+(j-1)*refine2+j1,
+<      &                                   gstart3+(k-1)*refine3+k1)
+<                         if (abs(grid_temp - fbar_save(i))
+<      &                       .gt. 3*fbar_save(i)) then
+<                              write(6,*) 'grid-parent:', grid_temp,
+<      &                       fbar_save(i)
+<                         endif
+---
+>      &                       (REAL(i1) + 0.5_RKIND - 
+>      &                       0.5_RKIND*REAL(refine1)) 
+>      &                          / REAL(refine1)*fx(i) +
+>      &                       (REAL(j1) + 0.5_RKIND - 
+>      &                       0.5_RKIND*REAL(refine2)) 
+>      &                          / REAL(refine2)*fy(i) +
+>      &                       (REAL(k1) + 0.5_RKIND - 
+>      &                       0.5_RKIND*REAL(refine3)) 
+>      &                          / REAL(refine3)*fz(i) )

@@ -577,6 +577,8 @@ c           timestep would have gone into supernova energy.
 c
             energy = sn_param * mform * (clight/v1)**2 / 
      &                (d(i,j,k)+mform*m_eject)
+
+
 c
 c#ifdef GMC_TEST_5 !#####  SNIa: energy proportional to mp(n), for 121512_dGF-RTF
 c

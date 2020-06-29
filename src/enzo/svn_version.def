@@ -1,2 +1,2 @@
-#define ENZO_SVN_REVISION "9d0353f65ff3+"
-#define ENZO_SVN_BRANCH "week-of-code"
+#define ENZO_SVN_REVISION 0
+#define ENZO_SVN_BRANCH ""

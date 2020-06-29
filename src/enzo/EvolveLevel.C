@@ -592,10 +592,6 @@ int EvolveLevel(TopGridData *MetaData, LevelHierarchyEntry *LevelArray[],
 
 #endif
 
-#ifdef debug_PS
-  //if (MyProcessorNumber == ROOT_PROCESSOR)
-     fprintf(stderr, "Right before Handler!\n");
-#endif
 
 // by Jo
 //FLOAT mass_leakage_total = 0.0;
@@ -624,16 +620,8 @@ int EvolveLevel(TopGridData *MetaData, LevelHierarchyEntry *LevelArray[],
   //}
 //CommunicationBarrier();
 
-#ifdef debug_PS
-  if (MyProcessorNumber == ROOT_PROCESSOR)
-     fprintf(stderr, "Right after Handler\n");
-#endif
       Grids[grid1]->GridData->ShocksHandler();
 
-#ifdef debug_PS
-  if (MyProcessorNumber == ROOT_PROCESSOR)
-     fprintf(stderr, "Right after Shocks\n");
-#endif
       /* Compute and apply thermal conduction. */
       if(IsotropicConduction || AnisotropicConduction){
 	if(Grids[grid1]->GridData->ConductHeat() == FAIL){
@@ -641,10 +629,6 @@ int EvolveLevel(TopGridData *MetaData, LevelHierarchyEntry *LevelArray[],
 	}
       }
 
-#ifdef debug_PS
-  if (MyProcessorNumber == ROOT_PROCESSOR)
-     fprintf(stderr, "Right after Particle Handler!\n");
-#endif 
     //fprintf(stderr, "EvolveLevel right after ConductHeat\n"); // by Jo
       /* Gravity: clean up AccelerationField. */
 
